@@ -17,9 +17,10 @@
 
 Választási lehetőség | Funkció 
 
- 👤 **Ember (1)** | Ember adatainak rögzítése <br>
+👤 **Ember (1)** | Ember adatainak rögzítése <br>
 🚗 **Jármű (2)** | Jármű adatainak rögzítése <br> 
 🚪 **Kilépés (3)** | Kilépés a kérdezés ciklusból <br>
+🔎 **Keresés (4)** | Keresés az állományban <br>
 
 </div>
 
@@ -48,6 +49,14 @@ Választási lehetőség | Funkció
 ## 🚪 (3) Kilépés
 
 - a hármas gomb megnyomásakor leáll a bekérdezése a látogatóknak
+
+---
+
+## 🔎 (4) Keresés
+
+- a négyes gomb megnyomásakor két opció lesz a kereséshez:
+    - Név alapján keresés
+    - Rendszám alapján keresés
 
 ---
 

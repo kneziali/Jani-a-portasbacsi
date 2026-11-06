@@ -9,3 +9,13 @@ Ember (1) - Jármű (2)
 - Kor
 - Személyi igazolvány száma
 - Látogatás célja
+
+(2) Jármű
+- Rendszám
+- Márka
+- Típus
+- Szín
+- Sofőr neve
+- Látogatás célja
+
+## A Látogatás logolva lesz a belepes.txt állományba

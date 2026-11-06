@@ -1,26 +1,66 @@
+<div align="center">
 
-[![language](https://img.shields.io/badge/language-C%23-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
+# 🛂 Jani-a-portasbacsi
 
-# Jani-a-portasbacsi
-Portásbácsi program - C#
+**Portásbácsi program - C#** <br>
+![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Project](https://img.shields.io/badge/Project-Console%20Application-blue?style=for-the-badge)
 
-# Választás
-Ember (1) - Jármű (2) - Kilépés a kérdezés ciklusból(3)
+</div>
 
-(1) Ember:
-- Név
-- Kor
-- Személyi igazolvány száma
-- Látogatás célja
+---
 
-(2) Jármű
-- Rendszám
-- Márka
-- Típus
-- Szín
-- Sofőr neve
-- Látogatás célja
+## 📋 Választás
 
-(3) Kilépés
+<div align="center">
+
+Választási lehetőség | Funkció 
+
+ 👤 **Ember (1)** | Ember adatainak rögzítése <br>
+🚗 **Jármű (2)** | Jármű adatainak rögzítése <br> 
+🚪 **Kilépés (3)** | Kilépés a kérdezés ciklusból <br>
+
+</div>
+
+---
+
+## 👤 (1) Ember
+
+- 📝 Név
+- 🎂 Kor
+- 💳️ Személyi igazolvány száma
+- 🎯 Látogatás célja
+
+---
+
+## 🚗 (2) Jármű
+
+- 🔢 Rendszám
+- 🏷️ Márka
+- 🚘 Típus
+- 🎨 Szín
+- 👨 Sofőr neve
+- 🎯 Látogatás célja
+
+---
+
+## 🚪 (3) Kilépés
+
 - a hármas gomb megnyomásakor leáll a bekérdezése a látogatóknak
-## A Látogatás logolva lesz a belepes.txt állományba
+
+---
+
+## 📁 Naplózás
+
+<div align="center">
+
+### 📄 `belepes.txt`
+
+</div>
+
+A Látogatás logolva lesz a belepes.txt állományba
+
+---
+
+<div align="center">

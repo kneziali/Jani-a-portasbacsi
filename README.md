@@ -1,3 +1,6 @@
+
+[![language](https://img.shields.io/badge/language-C%23-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
+
 # Jani-a-portasbacsi
 Portásbácsi program - C#
 

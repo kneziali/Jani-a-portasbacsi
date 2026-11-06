@@ -2,7 +2,7 @@
 Portásbácsi program - C#
 
 # Választás
-Ember (1) - Jármű (2)
+Ember (1) - Jármű (2) - Kilépés a kérdezés ciklusból(3)
 
 (1) Ember:
 - Név
@@ -18,4 +18,6 @@ Ember (1) - Jármű (2)
 - Sofőr neve
 - Látogatás célja
 
+(3)
+- a hármas gomb megnyomásakor leáll a bekérdezése a látogatóknak
 ## A Látogatás logolva lesz a belepes.txt állományba

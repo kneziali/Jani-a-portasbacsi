@@ -1,8 +1,106 @@
 ﻿using System.IO;
 
+bool checkIgazolvany(string igazolvany)
+{
+
+    if (igazolvany.Length != 8)
+    {
+        return false;
+    }
+
+    int step = 0;
+    foreach (char karakter in igazolvany)
+    {
+
+        step += 1;
+        if (step <= 6)
+        {
+            if (char.IsLetter(karakter))
+            {
+                return false;
+            }
+        }else if (step > 6)
+        {
+            if (char.IsDigit(karakter))
+            {
+                return false;
+            }
+        }
+
+
+    }
+
+    return true;
+}
+
+bool checkRendszam(string rendszam)
+{
+
+    if (rendszam.Length != 7 && rendszam.Length != 9)
+    {
+        return false;
+    }
+    
+    int step = 0;
+    foreach (char karakter in rendszam)
+    {
+        step += 1;
+        if (rendszam.Length == 7)
+        {
+            //elso branch // ABC-123
+            if (step <= 3)
+            {
+                if (char.IsDigit(karakter))
+                {
+                    return false;
+                }
+            }else if (step == 4)
+            {
+                if (karakter != '-')
+                {
+                    return false;
+                }
+            }else if (step > 4)
+            {
+                if (char.IsLetter(karakter))
+                {
+                    return false;
+                }
+            }
+
+        }else if (rendszam.Length == 9) 
+        {
+            //masodik branch //AA-AA-123
+            if (step <= 2 || step == 4 || step == 5)
+            {
+                if (char.IsDigit(karakter))
+                {
+                    return false;
+                }
+            }
+            else if (step == 3 || step == 6)
+            {
+                if (karakter != '-')
+                {
+                    return false;
+                }
+            }
+            else if (step > 6)
+            {
+                if (char.IsLetter(karakter))
+                {
+                    return false;
+                }
+            }
+        }
+
+    }
+
+    return true;
+}
 
 Console.WriteLine("Üdvözlöm portásbácsi");
-Console.Write("Ember (1) - jármű (2) - Kilép (3) - Keresés (4): ");
+Console.Write("Ember (1) - Jármű (2) - Kilép (3) - Keresés (4): ");
 int bejovo = int.Parse(Console.ReadLine());
 
 string adatok = "";
@@ -16,23 +114,22 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
         Console.Write("Név: ");
         string nev = Console.ReadLine();
 
-        Console.Write("Kor: ");
-        int kor = int.Parse(Console.ReadLine());
-
         Console.Write("Személyazonosító igazolvány szám: ");
         string igazolvany = Console.ReadLine();
-        while (igazolvany.Length != 8)
+        while (true)
         {
+            if (checkIgazolvany(igazolvany))
+            {
+                break;
+            }
             Console.Write("Adjon meg egy helyes személyazonosító igazolvány számot (pl. 123456AB): ");
             igazolvany = Console.ReadLine();
+            
         }
-
-        Console.Write("Látogatás célja: ");
-        string cel = Console.ReadLine();
 
         DateTime belepes = DateTime.Now;
 
-        adatok = $"================================\n{belepes.ToString("yyyy.MM.dd HH:mm:ss")}\nLátogató: Személy\nNév: {nev}\nKor: {kor}\nSzemélyi igazolvány szám: {igazolvany}\nLátogatás célja: {cel}\n================================\n";
+        adatok = $"================================\n{belepes.ToString("yyyy.MM.dd HH:mm:ss")}\nLátogató: Személy\nNév: {nev}\nSzemélyi igazolvány szám: {igazolvany}\n================================\n";
         File.AppendAllText("belepesek.txt", adatok);
 
 
@@ -42,8 +139,12 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
     {
         Console.Write("Rendszám (kötőjellel): ");
         string rendszam = Console.ReadLine();
-        while (rendszam.Length != 7 && rendszam.Length != 9)
+        while (true)
         {
+            if (checkRendszam(rendszam))
+            {
+                break;
+            }
             Console.Write("Adjon meg egy helyes rendszámot (pl. ABC-123 vagy AA-AA-123): ");
             rendszam = Console.ReadLine();
         }
@@ -53,22 +154,23 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
         string tipus = Console.ReadLine();
         Console.Write("Szín: ");
         string szin = Console.ReadLine();
-        Console.Write("Sofőr neve: ");
-        string sofor = Console.ReadLine();
-        Console.Write("Látogatás célja: ");
-        string cel = Console.ReadLine();
 
         DateTime belepes = DateTime.Now;
 
-        adatok = $"================================\n{belepes.ToString("yyyy.MM.dd HH:mm:ss")}\nLátogató: Jármű\nRendszám: {rendszam}\nMárka: {marka}\nTípus: {tipus}\nSzín: {szin}\nSofőr neve: {sofor}\nLátogatás célja: {cel}\n================================\n";
+        adatok = $"================================\n{belepes.ToString("yyyy.MM.dd HH:mm:ss")}\nLátogató: Jármű\nRendszám: {rendszam}\nMárka: {marka}\nTípus: {tipus}\nSzín: {szin}\n================================\n";
         File.AppendAllText("belepesek.txt", adatok);
 
     }
 
     if (bejovo == 4)
     {
-        Console.Write("Keresés Név (1) - Rendszám (2) alapján: ");
-        int nev_szam = int.Parse(Console.ReadLine());
+        Console.Write("Keresés Név (1) - Rendszám (2) - Jármű Típus (3) - Jármű Márka (4) alapján: ");
+        string nev_szam = Console.ReadLine();
+        while (nev_szam != "1" && nev_szam != "2" && nev_szam != "3" && nev_szam != "4")
+        {
+            Console.Write("Keresés Név (1) - Rendszám (2) - Jármű Típus (3) - Jármű Márka (4) alapján: ");
+            nev_szam = Console.ReadLine();
+        }
 
         Console.Write("Keressen: ");
         string keresesiErtek = Console.ReadLine();
@@ -77,7 +179,7 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
 
         bool talalat = false;
 
-        if (nev_szam == 1)
+        if (nev_szam == "1")
         {
             //Nev alapjan
             if (File.Exists("belepesek.txt"))
@@ -85,15 +187,15 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
                 string[] sorok = File.ReadAllLines("belepesek.txt");
                 for (int i = 0; i < sorok.Length; i++)
                 {
-                    if (sorok[i].Trim() == ($"Név: {keresesiErtek.Trim()}"))
+                    if (sorok[i].Trim().ToLower() == ($"Név: {keresesiErtek.Trim()}").ToLower())
                     {
-                        Console.WriteLine($"================================\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n{sorok[i + 2]}\n{sorok[i + 3]}\n================================\n");
+                        Console.WriteLine($"================================\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n================================\n");
                         talalat = true;
                     }
                 }
             }
         }
-        else if (nev_szam == 2)
+        else if (nev_szam == "2")
         {
             //Rendszam alapjan
             if (File.Exists("belepesek.txt"))
@@ -101,9 +203,41 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
                 string[] sorok = File.ReadAllLines("belepesek.txt");
                 for (int i = 0; i < sorok.Length; i++)
                 {
-                    if (sorok[i].Trim() == ($"Rendszám: {keresesiErtek.Trim()}"))
+                    if (sorok[i].Trim().ToLower() == ($"Rendszám: {keresesiErtek.Trim()}").ToLower())
                     {
-                        Console.WriteLine($"================================\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n{sorok[i + 2]}\n{sorok[i + 3]}\n{sorok[i + 4]}\n{sorok[i + 5]}\n================================\n");
+                        Console.WriteLine($"================================\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n{sorok[i + 2]}\n{sorok[i + 3]}\n================================\n");
+                        talalat = true;
+                    }
+                }
+            }
+        }
+        else if (nev_szam == "3")
+        {
+            //Jarmu Tipus alapjan
+            if (File.Exists("belepesek.txt"))
+            {
+                string[] sorok = File.ReadAllLines("belepesek.txt");
+                for (int i = 0; i < sorok.Length; i++)
+                {
+                    if (sorok[i].Trim().ToLower() == ($"Típus: {keresesiErtek.Trim()}").ToLower())
+                    {
+                        Console.WriteLine($"================================\n{sorok[i - 4]}\n{sorok[i - 3]}\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n================================\n");
+                        talalat = true;
+                    }
+                }
+            }
+        }
+        else if (nev_szam == "4")
+        {
+            //Jarmu Marka alapjan
+            if (File.Exists("belepesek.txt"))
+            {
+                string[] sorok = File.ReadAllLines("belepesek.txt");
+                for (int i = 0; i < sorok.Length; i++)
+                {
+                    if (sorok[i].Trim().ToLower() == ($"Márka: {keresesiErtek.Trim()}").ToLower())
+                    {
+                        Console.WriteLine($"================================\n{sorok[i - 3]}\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i+1]}\n{sorok[i + 2]}\n================================\n");
                         talalat = true;
                     }
                 }
@@ -121,7 +255,7 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
         break;
     }
 
-    Console.Write("Ember (1) - jármű (2) - Kilép (3) - Keresés (4): ");
+    Console.Write("Ember (1) - Jármű (2) - Kilép (3) - Keresés (4): ");
     bejovo = int.Parse(Console.ReadLine());
 
 }

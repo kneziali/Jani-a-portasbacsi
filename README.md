@@ -15,13 +15,13 @@
 
 <div align="center">
 
-A program célja hogy a portán lévő személy logolni tudja hogy ki mikor érkezett és hogy ezeket az adatokat késpőbb vissza lehessen keresni.
+A program célja hogy a portán lévő személy logolni tudja hogy ki mikor érkezett és hogy ezeket az adatokat később vissza lehessen keresni.
 
 </div>
 
 ---
 
-## 📋 Választás
+## 📋 Menüpontok
 
 <div align="center">
 
@@ -39,9 +39,7 @@ Választási lehetőség | Funkció
 ## 👤 (1) Ember
 
 - 📝 Név
-- 🎂 Kor
 - 💳️ Személyi igazolvány száma
-- 🎯 Látogatás célja
 
 ---
 
@@ -51,8 +49,6 @@ Választási lehetőség | Funkció
 - 🏷️ Márka
 - 🚘 Típus
 - 🎨 Szín
-- 👨 Sofőr neve
-- 🎯 Látogatás célja
 
 ---
 
@@ -64,11 +60,31 @@ Választási lehetőség | Funkció
 
 ## 🔎 (4) Keresés
 
-- a négyes gomb megnyomásakor két opció lesz a kereséshez:
+- a négyes gomb megnyomásakor négy opció lesz a kereséshez:
     - Név alapján keresés
     - Rendszám alapján keresés
+    - Jármű típusa alapján keresés
+    - Jármű márkája alapján keresés
 
 ---
+
+## Példa egy ember érkezésére és megkeresésére
+
+`Ember (1) - Jármű (2) - Kilép (3) - Keresés (4): 1`
+`Név: Fütyülő Imre`
+`Személyazonosító igazolvány szám: 432156FB`
+`Ember (1) - Jármű (2) - Kilép (3) - Keresés (4): 4`
+`Keresés Név (1) - Rendszám (2) - Jármű Típus (3) - Jármű Márka (4) alapján: 1`
+`Keressen: fütyülő imre`
+
+`Adatok a keresés alapján:`
+
+`================================`
+`2026.11.09 11:04:04`
+`Látogató: Személy`
+`Név: Fütyülő Imre`
+`Személyi igazolvány szám: 432156FB`
+`================================`
 
 ## 📁 Naplózás
 

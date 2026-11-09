@@ -1,64 +1,50 @@
 <div align="center">
-
-# 🛂 Jani-a-portasbacsi
-
-**Portásbácsi program - C#** <br>
-![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![Project](https://img.shields.io/badge/Project-Console%20Application-blue?style=for-the-badge)
+    
+# Jani-a-portasbacsi
 
 </div>
 
----
+# Portásbácsi program - C#
 
-## 🎯 A program célja
 
-<div align="center">
+
+##  A program célja
 
 A program célja hogy a portán lévő személy logolni tudja hogy ki mikor érkezett és hogy ezeket az adatokat később vissza lehessen keresni.
 
-</div>
+##  Menüpontok
 
----
+Választási lehetőség és Funkciói
 
-## 📋 Menüpontok
+ **Ember (1)**  Ember adatainak rögzítése <br>
+ **Jármű (2)**  Jármű adatainak rögzítése <br> 
+ **Kilépés (3)**  Kilépés a kérdezés ciklusból <br>
+ **Keresés (4)**  Keresés az állományban <br>
 
-<div align="center">
 
-Választási lehetőség | Funkció 
+##  (1) Ember
 
-👤 **Ember (1)** | Ember adatainak rögzítése <br>
-🚗 **Jármű (2)** | Jármű adatainak rögzítése <br> 
-🚪 **Kilépés (3)** | Kilépés a kérdezés ciklusból <br>
-🔎 **Keresés (4)** | Keresés az állományban <br>
+-  Név
+-  Személyi igazolvány száma
 
-</div>
 
----
 
-## 👤 (1) Ember
+##  (2) Jármű
 
-- 📝 Név
-- 💳️ Személyi igazolvány száma
+-  Rendszám
+-  Márka
+-  Típus
+-  Szín
 
----
 
-## 🚗 (2) Jármű
 
-- 🔢 Rendszám
-- 🏷️ Márka
-- 🚘 Típus
-- 🎨 Szín
-
----
-
-## 🚪 (3) Kilépés
+##  (3) Kilépés
 
 - a hármas gomb megnyomásakor leáll a bekérdezése a látogatóknak
 
----
 
-## 🔎 (4) Keresés
+
+##  (4) Keresés
 
 - a négyes gomb megnyomásakor négy opció lesz a kereséshez:
     - Név alapján keresés
@@ -66,22 +52,16 @@ Választási lehetőség | Funkció
     - Jármű típusa alapján keresés
     - Jármű márkája alapján keresés
 
----
+
 
 ## Példa egy ember érkezésére és keresésére
 
 ![Example Image](example.png)
 
-## 📁 Naplózás
+##  Naplózás
 
-<div align="center">
 
-### 📄 `belepes.txt`
-
-</div>
 
 A Látogatás logolva lesz a belepes.txt állományba
 
 ---
-
-<div align="center">

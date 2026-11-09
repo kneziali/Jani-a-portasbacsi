@@ -19,7 +19,8 @@ bool checkIgazolvany(string igazolvany)
             {
                 return false;
             }
-        }else if (step > 6)
+        }
+        else if (step > 6)
         {
             if (char.IsDigit(karakter))
             {
@@ -40,7 +41,7 @@ bool checkRendszam(string rendszam)
     {
         return false;
     }
-    
+
     int step = 0;
     foreach (char karakter in rendszam)
     {
@@ -54,13 +55,15 @@ bool checkRendszam(string rendszam)
                 {
                     return false;
                 }
-            }else if (step == 4)
+            }
+            else if (step == 4)
             {
                 if (karakter != '-')
                 {
                     return false;
                 }
-            }else if (step > 4)
+            }
+            else if (step > 4)
             {
                 if (char.IsLetter(karakter))
                 {
@@ -68,7 +71,8 @@ bool checkRendszam(string rendszam)
                 }
             }
 
-        }else if (rendszam.Length == 9) 
+        }
+        else if (rendszam.Length == 9)
         {
             //masodik branch //AA-AA-123
             if (step <= 2 || step == 4 || step == 5)
@@ -124,7 +128,7 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
             }
             Console.Write("Adjon meg egy helyes személyazonosító igazolvány számot (pl. 123456AB): ");
             igazolvany = Console.ReadLine();
-            
+
         }
 
         DateTime belepes = DateTime.Now;
@@ -148,6 +152,7 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
             Console.Write("Adjon meg egy helyes rendszámot (pl. ABC-123 vagy AA-AA-123): ");
             rendszam = Console.ReadLine();
         }
+        rendszam = rendszam.ToUpper();
         Console.Write("Márka: ");
         string marka = Console.ReadLine();
         Console.Write("Típus: ");
@@ -237,7 +242,7 @@ while (bejovo == 1 || bejovo == 2 || bejovo == 4)
                 {
                     if (sorok[i].Trim().ToLower() == ($"Márka: {keresesiErtek.Trim()}").ToLower())
                     {
-                        Console.WriteLine($"================================\n{sorok[i - 3]}\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i+1]}\n{sorok[i + 2]}\n================================\n");
+                        Console.WriteLine($"================================\n{sorok[i - 3]}\n{sorok[i - 2]}\n{sorok[i - 1]}\n{sorok[i]}\n{sorok[i + 1]}\n{sorok[i + 2]}\n================================\n");
                         talalat = true;
                     }
                 }

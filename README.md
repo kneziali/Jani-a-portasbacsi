@@ -11,6 +11,16 @@
 
 ---
 
+## 🎯 A program célja
+
+<div align="center">
+
+A program célja hogy a portán lévő személy logolni tudja hogy ki mikor érkezett és hogy ezeket az adatokat késpőbb vissza lehessen keresni.
+
+</div>
+
+---
+
 ## 📋 Választás
 
 <div align="center">
